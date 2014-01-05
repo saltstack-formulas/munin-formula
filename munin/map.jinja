@@ -1,0 +1,27 @@
+{% set munin_master = salt['grains.filter_by']({
+    'Debian': {
+        'package': 'munin',
+        'config': '/etc/munin/munin.conf',
+        'config_src': 'salt://munin/files/munin.conf',
+    },
+    'RedHat': {
+        'package': 'munin',
+        'config': '/etc/munin/munin.conf',
+        'config_src': 'salt://munin/files/munin.conf',
+    },
+}, merge=salt['pillar.get']('munin_master:lookup')) %}
+
+{% set munin_node = salt['grains.filter_by']({
+    'Debian': {
+        'package': 'munin-node',
+        'service': 'munin-node',
+        'config': '/etc/munin/munin-node.conf',
+        'config_src': 'salt://munin/files/munin-node.conf',
+    },
+    'RedHat': {
+        'package': 'munin-node',
+        'service': 'munin-node',
+        'config': '/etc/munin/munin-node.conf',
+        'config_src': 'salt://munin/files/munin-node.conf',
+    },
+}, merge=salt['pillar.get']('munin_node:lookup')) %}
