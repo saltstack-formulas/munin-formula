@@ -8,4 +8,7 @@ munin_master_config:
     - name: {{ munin_master.config }}
     - source: {{ munin_master.config_src }}
     - template: jinja
+    - user: root
+    - group: root
+    - mode: 644
 
