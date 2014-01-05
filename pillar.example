@@ -1,0 +1,32 @@
+munin_master:
+  dbdir: "/var/lib/munin"
+  htmldir: "/var/cache/munin/www"
+  logdir: "/var/log/munin"
+  rundir: "/var/run/munin"
+  includerdir: "/etc/munin/munin-conf.d"
+  hosts:
+    - "localhost.localdomain":
+      - address: "127.0.0.1"
+      - use_node_name: yes
+
+munin_node:
+  log_level: 4
+  log_file: "/var/log/munin/munin-node.log"
+  pid_file: "/var/run/munin/munin-node.pid"
+  background: 1
+  setsid: 1
+  user: root
+  group: root
+  ignore_file:
+    - "[\\#~]$"
+    - "DEADJOE$"
+    - "\\.bak$"
+    - "%$"
+    - "\\.dpkg-(tmp|new|old|dist)$"
+    - "\\.rpm(save|new)$"
+    - "\\.pod$"
+  allow:
+    - "^127\\.0\\.0\\.1$"
+    - "^::1$"
+  host: "*"
+  port: 4949
