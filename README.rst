@@ -12,6 +12,8 @@ States
     Installs the munin node package and enables the node service.
 ``munin.node.config`` (includes ``munin.node``)
     Generates a config file for the munin node based on pillar data.
+``munin.tls``
+    Installs the Perl package Net::SSLEay so munin can use TLS.
 
 Configuration
 =============

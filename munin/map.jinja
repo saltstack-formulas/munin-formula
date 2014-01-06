@@ -25,3 +25,12 @@
         'config_src': 'salt://munin/files/munin-node.conf',
     },
 }, merge=salt['pillar.get']('munin_node:lookup')) %}
+
+{% set net_ssleay = salt['grains.filter_by']({
+    'Debian': {
+        'package': 'libnet-ssleay-perl',
+    },
+    'RedHat': {
+        'package': 'perl-Net-SSLeay',
+    },
+}, merge=salt['pillar.get']('net_ssleay:lookup')) %}
