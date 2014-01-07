@@ -31,3 +31,17 @@ munin_node:
     - "^::1$"
   host: "*"
   port: 4949
+
+munin_tls:
+  private_pem: |
+    -----BEGIN RSA PRIVATE KEY-----
+    Inline key here
+    -----END RSA PRIVATE KEY-----
+  certificate_pem: |
+    -----BEGIN CERTIFICATE-----
+    Inline certificate key
+    -----END CERTIFICATE-----
+  ca_certificate_pem: |
+    -----BEGIN CERTIFICATE-----
+    Inline CA certificate key
+    -----END CERTIFICATE-----

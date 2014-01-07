@@ -14,6 +14,7 @@ States
     Generates a config file for the munin node based on pillar data.
 ``munin.tls``
     Installs the Perl package Net::SSLEay so munin can use TLS.
+    Also, if the private key, certificate, or CA certificate are specified (as in ``pillar.example``), then the appropriate files are created. Note that it is up to the user to correctly specify the location of these files in their master and node config files.
 
 Configuration
 =============
