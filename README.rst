@@ -1,6 +1,6 @@
 munin
 =====
-``munin`` is a monioring application with a master/node architecture. The master periodically connects to each node and collects information from it. The nodes each run a ``munin-node`` service that listens for these connections.
+``munin`` is a monitoring application with a master/node architecture. The master periodically connects to each node and collects information from it. The nodes each run a ``munin-node`` service that listens for these connections.
 
 .. note::
 
