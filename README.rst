@@ -39,6 +39,13 @@ Includes ``munin.node``.
 
 Generates a config file for the munin node based on pillar data.
 
+``munin.node.plugins``
+----------------------
+
+Includes ``munin.node``.
+
+Symlinks the desired plugins on the munin node based on pillar data.
+
 ``munin.tls``
 -------------
 
