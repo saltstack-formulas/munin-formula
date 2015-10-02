@@ -45,3 +45,12 @@ munin_tls:
     -----BEGIN CERTIFICATE-----
     Inline CA certificate key
     -----END CERTIFICATE-----
+
+munin_node_common_plugins:
+  cpu: cpu
+  df: df 
+  memory: memory
+  uptime: uptime
+  users: users
+  load: load
+  if_eth0: if_

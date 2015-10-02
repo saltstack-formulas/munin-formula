@@ -22,18 +22,21 @@
         'service': 'munin-node',
         'config': '/etc/munin/munin-node.conf',
         'config_src': 'salt://munin/files/munin-node.conf',
+        'plugin_dir': '/usr/share/munin/plugins',
     },
     'RedHat': {
         'package': 'munin-node',
         'service': 'munin-node',
         'config': '/etc/munin/munin-node.conf',
         'config_src': 'salt://munin/files/munin-node.conf',
+        'plugin_dir': '/usr/share/munin/plugins',
     },
     'Arch': {
         'package': 'munin-node',
         'service': 'munin-node',
         'config': '/etc/munin/munin-node.conf',
         'config_src': 'salt://munin/files/munin-node.conf',
+        'plugin_dir': '/usr/lib/munin/plugins',
     },
 }, merge=salt['pillar.get']('munin_node:lookup')) %}
 
