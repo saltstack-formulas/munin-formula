@@ -12,6 +12,8 @@ munin_tls_private_key:
     - group: munin
     - mode: 600
     - contents_pillar: munin_tls:private_pem
+    - makedirs: True
+    - dir_mode: 700
 {%- endif %}
 
 {%- if salt['pillar.get']('munin_tls:certificate_pem') %}
@@ -22,6 +24,8 @@ munin_tls_certificate:
     - group: munin
     - mode: 600
     - contents_pillar: munin_tls:certificate_pem
+    - makedirs: True
+    - dir_mode: 700
 {%- endif %}
 
 {%- if salt['pillar.get']('munin_tls:ca_certificate_pem') %}
@@ -32,4 +36,6 @@ munin_tls_ca_certificate:
     - group: munin
     - mode: 600
     - contents_pillar: munin_tls:ca_certificate_pem
+    - makedirs: True
+    - dir_mode: 700
 {%- endif %}
