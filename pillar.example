@@ -8,7 +8,7 @@ munin_master:
   hosts:
     "localhost.localdomain":
       address: "127.0.0.1"
-      use_node_name: "yes"
+      use_node_name: "no"
 
 munin_node:
   log_level: 4
@@ -26,6 +26,7 @@ munin_node:
     - "\\.dpkg-(tmp|new|old|dist)$"
     - "\\.rpm(save|new)$"
     - "\\.pod$"
+  host_name: {{ grains['host'] }}
   allow:
     - "^127\\.0\\.0\\.1$"
     - "^::1$"
@@ -54,3 +55,9 @@ munin_node_common_plugins:
   users: users
   load: load
   if_eth0: if_
+
+munin_node_specific_plugins:
+  example_server_01:
+    cpuspeed: cpuspeed
+  example_server_02:
+    irqstats: irqstats
