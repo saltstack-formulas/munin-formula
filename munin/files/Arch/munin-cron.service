@@ -1,0 +1,7 @@
+[Unit]
+Description=Munin Cron
+After=network.target
+
+[Service]
+User=munin
+ExecStart=/usr/bin/munin-cron

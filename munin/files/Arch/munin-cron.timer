@@ -1,0 +1,8 @@
+[Unit]
+Description=Munin Cron Timer
+
+[Timer]
+OnCalendar=*-*-* *:00/5:00
+
+[Install]
+WantedBy=multi-user.target
