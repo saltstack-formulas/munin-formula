@@ -27,6 +27,13 @@ Includes ``munin.master``.
 
 Generates a config file for the munin master based on pillar data.
 
+``munin.master.munin-cron``
+-----------------------
+
+Includes ``munin.master``.
+
+Archlinux only. Enable munin-cron via a systemd timer.
+
 ``munin.node``
 --------------
 

@@ -13,6 +13,8 @@
         'package': 'munin',
         'config': '/etc/munin/munin.conf',
         'config_src': 'salt://munin/files/munin.conf',
+        'cron_service': '/etc/systemd/system/munin-cron.service',
+        'cron_timer': '/etc/systemd/system/munin-cron.timer',
     },
 }, merge=salt['pillar.get']('munin_master:lookup')) %}
 
