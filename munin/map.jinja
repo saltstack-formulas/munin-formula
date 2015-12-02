@@ -61,6 +61,9 @@
     'RedHat': {
         'package': 'perl-Net-SSLeay',
     },
+    'Gentoo': {
+        'package': 'dev-perl/Net-SSLeay',
+    },
 }, merge=salt['pillar.get']('net_ssleay:lookup')) %}
 
 {% set munin_tls = salt['grains.filter_by']({
@@ -70,6 +73,11 @@
         'ca_certificate': '/etc/munin/tls/cacert.pem',
     },
     'RedHat': {
+        'private_key': '/etc/munin/tls/key.pem',
+        'certificate': '/etc/munin/tls/crt.pem',
+        'ca_certificate': '/etc/munin/tls/cacert.pem',
+    },
+    'Gentoo': {
         'private_key': '/etc/munin/tls/key.pem',
         'certificate': '/etc/munin/tls/crt.pem',
         'ca_certificate': '/etc/munin/tls/cacert.pem',
