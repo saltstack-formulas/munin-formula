@@ -16,7 +16,7 @@
         'cron_service': '/etc/systemd/system/munin-cron.service',
         'cron_timer': '/etc/systemd/system/munin-cron.timer',
     },
-}, merge=salt['pillar.get']('munin_master:lookup')) %}
+}, merge=salt['pillar.get']('munin:lookup:master')) %}
 
 {% set munin_node = salt['grains.filter_by']({
     'Debian': {
@@ -40,7 +40,7 @@
         'config_src': 'salt://munin/files/munin-node.conf',
         'plugin_dir': '/usr/lib/munin/plugins',
     },
-}, merge=salt['pillar.get']('munin_node:lookup')) %}
+}, merge=salt['pillar.get']('munin:lookup:node')) %}
 
 {% set net_ssleay = salt['grains.filter_by']({
     'Debian': {
@@ -62,4 +62,4 @@
         'certificate': '/etc/munin/tls/crt.pem',
         'ca_certificate': '/etc/munin/tls/cacert.pem',
     },
-}, merge=salt['pillar.get']('munin_tls:lookup')) %}
+}, merge=salt['pillar.get']('munin:lookup:tls')) %}
