@@ -1,3 +1,13 @@
+# Only enable and change or add lookup data when you need to change the defaults!
+#munin:
+#  lookup:
+#    master:
+#      config_src: 'salt://munin/files/my-munin.conf',
+#    node:
+#      config_src: 'salt://munin/files/my-munin-node.conf',
+#    tls:
+#      private_key: '/etc/ssl/private/munin/key.pem'
+
 munin_master:
   globals:
     dbdir: "/var/lib/munin"
