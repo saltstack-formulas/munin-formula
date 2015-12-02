@@ -14,7 +14,7 @@ include:
 {% endfor %}
 
 # Node specific plugins
-{% for hostname, plugin in salt['pillar.get']('munin_node_specific_plugins').items() %}
+{% for hostname, plugin in salt['pillar.get']('munin_node_specific_plugins', {}).items() %}
 {% if salt['pillar.get']('munin_node:host_name') == hostname %}
 {% for plugin_name, linked_file in plugin.items() %}
 /etc/munin/plugins/{{ plugin_name }}:
