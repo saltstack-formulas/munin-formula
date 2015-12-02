@@ -16,6 +16,11 @@
         'cron_service': '/etc/systemd/system/munin-cron.service',
         'cron_timer': '/etc/systemd/system/munin-cron.timer',
     },
+    'Gentoo': {
+        'package': 'net-analyzer/munin',
+        'config': '/etc/munin/munin.conf',
+        'config_src': 'salt://munin/files/munin.conf',
+    },
 }, merge=salt['pillar.get']('munin:lookup:master')) %}
 
 {% set munin_node = salt['grains.filter_by']({
@@ -39,6 +44,13 @@
         'config': '/etc/munin/munin-node.conf',
         'config_src': 'salt://munin/files/munin-node.conf',
         'plugin_dir': '/usr/lib/munin/plugins',
+    },
+    'Gentoo': {
+        'package': 'net-analyzer/munin',
+        'service': 'munin-node',
+        'config': '/etc/munin/munin-node.conf',
+        'config_src': 'salt://munin/files/munin-node.conf',
+        'plugin_dir': '/usr/libexec/munin/plugins',
     },
 }, merge=salt['pillar.get']('munin:lookup:node')) %}
 
