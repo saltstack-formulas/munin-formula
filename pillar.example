@@ -20,7 +20,7 @@ munin_master:
       address: "127.0.0.1"
       use_node_name: "no"
   # In case you need additional variables
-  formula_append |
+  formula_append: |
     some_variable value
 
 munin_node:
