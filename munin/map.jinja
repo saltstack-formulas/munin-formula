@@ -9,6 +9,11 @@
         'config': '/etc/munin/munin.conf',
         'config_src': 'salt://munin/files/munin.conf',
     },
+    'Suse': {
+        'package': 'munin',
+        'config': '/etc/munin/munin.conf',
+        'config_src': 'salt://munin/files/munin.conf',
+    },
     'Arch': {
         'package': 'munin',
         'config': '/etc/munin/munin.conf',
@@ -32,6 +37,13 @@
         'plugin_dir': '/usr/share/munin/plugins',
     },
     'RedHat': {
+        'package': 'munin-node',
+        'service': 'munin-node',
+        'config': '/etc/munin/munin-node.conf',
+        'config_src': 'salt://munin/files/munin-node.conf',
+        'plugin_dir': '/usr/share/munin/plugins',
+    },
+    'Suse': {
         'package': 'munin-node',
         'service': 'munin-node',
         'config': '/etc/munin/munin-node.conf',
