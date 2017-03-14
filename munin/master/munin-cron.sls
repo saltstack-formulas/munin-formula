@@ -28,3 +28,9 @@ munin-cron.timer:
       - file: cron_timer
 
 {% endif %}
+{% if salt['grains.get']('os_family') == 'Suse' %}
+munin-cron:
+  service.running:
+    - name: cron
+    - enable: True
+{% endif %}
